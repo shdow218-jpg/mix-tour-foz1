@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mixto_ur | Táxi & Turismo em Foz do Iguaçu - Marcus Guarilha (Spin 7 Lugares)</title>
+    <meta name="description" content="Transporte privativo, receptivo aeroporto IGU/IGR e passeios turísticos na Tríplice Fronteira (Brasil, Paraguai e Argentina) com Chevrolet Spin 7 lugares. Motorista credenciado Marcus Guarilha.">
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        petrol: {
+                            800: '#0F3459',
+                            900: '#0A2540',
+                            950: '#061829',
+                        },
+                        emerald: {
+                            500: '#10B981',
+                            600: '#059669',
+                            700: '#047857',
+                        },
+                        amber: {
+                            400: '#FBBF24',
+                            500: '#F59E0B',
+                            600: '#D97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-emerald-600 selection:text-white">
+
+    <!-- ==================== 1. HEADER / NAVEGAÇÃO FIXA ==================== -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-petrol-900/95 backdrop-blur-md border-b border-white/10 shadow-lg transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo Estilizada -->
+                <a href="#inicio" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center text-white shadow-md shadow-emerald-600/30 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-van-shuttle text-xl"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-1.5">
+                            <span class="font-display font-extrabold text-xl sm:text-2xl tracking-tight text-white">Mixto<span class="text-amber-400">_ur</span></span>
+                            <span class="hidden sm:inline-block px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-amber-500/20 text-amber-400 border border-amber-400/30 rounded-full">7 Lugares</span>
+                        </div>
+                        <p class="text-xs text-slate-300 font-medium tracking-wide">Táxi & Turismo • Foz do Iguaçu</p>
+                    </div>
+                </a>
+
+                <!-- Links Âncora Desktop -->
+                <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-200">
+                    <a href="#inicio" class="hover:text-amber-400 transition-colors">Início</a>
+                    <a href="#veiculo" class="hover:text-amber-400 transition-colors">Veículo 7 Lugares</a>
+                    <a href="#roteiros" class="hover:text-amber-400 transition-colors">Roteiros</a>
+                    <a href="#simulador" class="hover:text-amber-400 transition-colors">Simulador de Orçamento</a>
+                    <a href="#faq" class="hover:text-amber-400 transition-colors">Dicas de Fronteira</a>
+                </nav>
+
+                <!-- Botão de Destaque Topo & Menu Mobile -->
+                <div class="flex items-center gap-3">
+                    <a href="https://www.instagram.com/marcusrecptivofozdoiguacu1?exln=MWJodTVzczZqaG5zaw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram Marcus Receptivo Foz do Iguaçu" class="hidden sm:inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/10 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-pink-600 hover:to-purple-600 text-white border border-white/15 transition-all" title="Instagram @marcusrecptivofozdoiguacu1">
+                        <i class="fa-brands fa-instagram text-lg"></i>
+                    </a>
+
+                    <button type="button" onclick="abrirWhatsAppDireto()" class="hidden sm:inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-lg shadow-emerald-600/25 transition-all hover:-translate-y-0.5">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Chamar no WhatsApp</span>
+                    </button>
+                    
+                    <button id="mobile-menu-btn" aria-label="Abrir Menu" class="lg:hidden p-2.5 rounded-xl bg-white/10 text-white hover:bg-white/20 transition-colors">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-petrol-950 border-t border-white/10 px-4 pt-3 pb-6 space-y-2 shadow-2xl">
+            <a href="#inicio" class="mobile-link block px-4 py-3 rounded-xl text-slate-200 hover:bg-white/10 hover:text-amber-400 font-medium">Início</a>
+            <a href="#veiculo" class="mobile-link block px-4 py-3 rounded-xl text-slate-200 hover:bg-white/10 hover:text-amber-400 font-medium">Veículo 7 Lugares</a>
+            <a href="#roteiros" class="mobile-link block px-4 py-3 rounded-xl text-slate-200 hover:bg-white/10 hover:text-amber-400 font-medium">Roteiros</a>
+            <a href="#simulador" class="mobile-link block px-4 py-3 rounded-xl text-slate-200 hover:bg-white/10 hover:text-amber-400 font-medium">Simulador de Orçamento</a>
+            <a href="#faq" class="mobile-link block px-4 py-3 rounded-xl text-slate-200 hover:bg-white/10 hover:text-amber-400 font-medium">Dicas de Fronteira</a>
+            <div class="pt-2 space-y-2.5">
+                <a href="https://www.instagram.com/marcusrecptivofozdoiguacu1?exln=MWJodTVzczZqaG5zaw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="mobile-link flex items-center justify-center gap-2 w-full bg-white/10 hover:bg-white/15 border border-white/15 text-white font-semibold py-3 rounded-xl">
+                    <i class="fa-brands fa-instagram text-lg text-pink-400"></i>
+                    <span>@marcusrecptivofozdoiguacu1</span>
+                </a>
+                <button type="button" onclick="abrirWhatsAppDireto()" class="mobile-link flex items-center justify-center gap-2 w-full bg-emerald-600 text-white font-semibold py-3.5 rounded-xl shadow-lg">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Chamar no WhatsApp</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== 2. HERO SECTION ==================== -->
+    <section id="inicio" class="relative pt-28 pb-20 lg:pt-36 lg:pb-28 bg-petrol-900 overflow-hidden">
+        <!-- Elementos Decorativos -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-emerald-600/20 via-petrol-900 to-petrol-950"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Coluna Esquerda: Título, Subtítulo & CTAs -->
+                <div class="lg:col-span-7 text-white space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm text-xs sm:text-sm font-semibold text-amber-300">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Motorista Credenciado • Tríplice Fronteira (BR • PY • AR)
+                    </div>
+                    
+                    <h1 class="font-display font-extrabold text-3xl sm:text-5xl lg:text-[3.35rem] leading-[1.15] tracking-tight">
+                        Explore Foz do Iguaçu com <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-amber-300">Conforto, Segurança</span> e Exclusividade
+                    </h1>
+                    
+                    <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
+                        Atendimento personalizado de <strong class="text-white font-semibold">Marcus Guarilha</strong> a bordo da <strong class="text-amber-300 font-semibold">Chevrolet Spin 7 lugares</strong> — ideal para famílias, grupos e compras no Paraguai, com pontualidade e total tranquilidade nas aduanas.
+                    </p>
+                    
+                    <!-- Dois CTAs Principais -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                        <a href="#simulador" class="inline-flex items-center justify-center gap-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-7 py-4 rounded-2xl shadow-xl shadow-emerald-600/30 transition-all hover:-translate-y-0.5 text-base">
+                            <i class="fa-solid fa-calculator text-lg"></i>
+                            <span>Simular Orçamento Agora</span>
+                        </a>
+                        <button type="button" onclick="abrirWhatsAppDireto()" class="inline-flex items-center justify-center gap-2.5 bg-white/10 hover:bg-white/15 text-white border border-white/20 font-semibold px-7 py-4 rounded-2xl backdrop-blur-sm transition-all text-base">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-xl"></i>
+                            <span>Falar com Marcus Guarilha</span>
+                        </button>
+                    </div>
+
+                    <!-- Cards Rápidos de Confiança -->
+                    <div class="pt-6 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                            <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center mb-2">
+                                <i class="fa-solid fa-users text-sm"></i>
+                            </div>
+                            <p class="font-display font-bold text-sm text-white">Até 6 Passageiros</p>
+                            <p class="text-[11px] text-slate-400">Spin 7 lugares</p>
+                        </div>
+
+                        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                            <div class="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center mb-2">
+                                <i class="fa-solid fa-snowflake text-sm"></i>
+                            </div>
+                            <p class="font-display font-bold text-sm text-white">Ar-Condicionado</p>
+                            <p class="text-[11px] text-slate-400">Climatização total</p>
+                        </div>
+
+                        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-2">
+                                <i class="fa-solid fa-plane-arrival text-sm"></i>
+                            </div>
+                            <p class="font-display font-bold text-sm text-white">Aeroportos IGU & IGR</p>
+                            <p class="text-[11px] text-slate-400">Receptivo pontual</p>
+                        </div>
+
+                        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                            <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center mb-2">
+                                <i class="fa-solid fa-earth-americas text-sm"></i>
+                            </div>
+                            <p class="font-display font-bold text-sm text-white">Tríplice Fronteira</p>
+                            <p class="text-[11px] text-slate-400">BR • PY • AR legalizado</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna Direita: Cartão Visual de Destaque -->
+                <div class="lg:col-span-5">
+                    <div class="relative bg-gradient-to-b from-white/12 to-white/5 border border-white/15 rounded-3xl p-6 sm:p-8 backdrop-blur-md shadow-2xl">
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="px-3 py-1 rounded-full bg-amber-500 text-petrol-950 font-bold text-xs uppercase tracking-wider">
+                                Táxi & Turismo Oficial
+                            </span>
+                            <span class="text-slate-300 text-xs font-medium flex items-center gap-1.5">
+                                <i class="fa-solid fa-shield-halved text-emerald-400"></i> Credenciado Fronteira
+                            </span>
+                        </div>
+
+                        <div class="relative rounded-2xl overflow-hidden bg-petrol-950 border border-white/10 mb-6">
+                            <img 
+                                src="https://images.unsplash.com/photo-1583255448430-17c5eda08e5c?auto=format&fit=crop&w=900&q=80" 
+                                alt="Cataratas do Iguaçu - Foz do Iguaçu" 
+                                onerror="this.onerror=null;this.src='https://placehold.co/800x480/0A2540/FFFFFF?text=Mixto_ur+Foz+do+Igua%C3%A7u';"
+                                class="w-full h-52 sm:h-60 object-cover opacity-85 hover:scale-105 transition-transform duration-700"
+                            >
+                            <div class="absolute inset-0 bg-gradient-to-t from-petrol-950 via-petrol-950/30 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between">
+                                <div>
+                                    <p class="text-xs text-amber-300 font-semibold uppercase tracking-wider">Motorista Credenciado</p>
+                                    <h2 class="text-white font-display font-bold text-xl">Marcus Guarilha</h2>
+                                </div>
+                                <div class="px-3 py-1.5 rounded-xl bg-emerald-600/95 backdrop-blur-sm text-white text-xs font-bold shadow">
+                                    Spin 7 Lugares
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <p class="text-xs font-semibold uppercase tracking-wider text-slate-400">Atuação completa na Tríplice Fronteira:</p>
+                            <div class="grid grid-cols-3 gap-2.5 text-center">
+                                <div class="p-3 rounded-2xl bg-white/5 border border-white/10 hover:border-emerald-500/50 transition-colors">
+                                    <span class="text-2xl block mb-1" role="img" aria-label="Brasil">🇧🇷</span>
+                                    <span class="text-white font-bold text-xs block">Brasil</span>
+                                    <span class="text-[11px] text-slate-400">Foz & Aeroporto</span>
+                                </div>
+                                <div class="p-3 rounded-2xl bg-white/5 border border-white/10 hover:border-amber-500/50 transition-colors">
+                                    <span class="text-2xl block mb-1" role="img" aria-label="Paraguai">🇵🇾</span>
+                                    <span class="text-white font-bold text-xs block">Paraguai</span>
+                                    <span class="text-[11px] text-slate-400">Compras CDE</span>
+                                </div>
+                                <div class="p-3 rounded-2xl bg-white/5 border border-white/10 hover:border-sky-400/50 transition-colors">
+                                    <span class="text-2xl block mb-1" role="img" aria-label="Argentina">🇦🇷</span>
+                                    <span class="text-white font-bold text-xs block">Argentina</span>
+                                    <span class="text-[11px] text-slate-400">Puerto Iguazú</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 3. CHEVROLET SPIN 7 LUGARES & MARCUS GUARILHA ==================== -->
+    <section id="veiculo" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="inline-block px-3.5 py-1 rounded-full bg-emerald-50 text-emerald-700 font-bold text-xs uppercase tracking-wider mb-3">
+                    Versatilidade & Atendimento Premium
+                </span>
+                <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-petrol-900">
+                    Chevrolet Spin 7 Lugares & Atendimento Marcus Guarilha
+                </h2>
+                <p class="text-slate-600 mt-4 text-base sm:text-lg">
+                    Alternância inteligente entre transporte para grupos maiores ou amplo espaço de bagageiro, sempre com condução segura e experiente.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-start">
+                <!-- Coluna Esquerda: Seletor Interativo de Configuração da Spin -->
+                <div class="lg:col-span-6 bg-slate-50 border border-slate-200/90 rounded-3xl p-6 sm:p-8 shadow-sm">
+                    <div class="flex items-center justify-between flex-wrap gap-2 mb-5">
+                        <span class="text-xs font-bold uppercase tracking-wider text-petrol-900 flex items-center gap-2">
+                            <i class="fa-solid fa-sliders text-emerald-600"></i> Simule o Espaço da Spin:
+                        </span>
+                        <span class="px-3 py-1 rounded-full bg-amber-500/15 text-amber-700 text-xs font-bold">
+                            7 Lugares (Motorista + até 6 Pax)
+                        </span>
+                    </div>
+
+                    <!-- Botões do Seletor Interativo -->
+                    <div class="grid grid-cols-2 gap-2.5 p-1.5 bg-slate-200/80 rounded-2xl mb-6">
+                        <button 
+                            type="button" 
+                            id="btn-modo-familia" 
+                            onclick="alternarModoSpin('familia')"
+                            class="py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-bold bg-petrol-900 text-white shadow transition-all flex items-center justify-center gap-2"
+                        >
+                            <i class="fa-solid fa-people-roof"></i>
+                            <span>Modo Família (6 Pax)</span>
+                        </button>
+                        <button 
+                            type="button" 
+                            id="btn-modo-compras" 
+                            onclick="alternarModoSpin('compras')"
+                            class="py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 hover:text-petrol-900 transition-all flex items-center justify-center gap-2"
+                        >
+                            <i class="fa-solid fa-suitcase-rolling"></i>
+                            <span>Modo Compras / Aeroporto</span>
+                        </button>
+                    </div>
+
+                    <!-- Visualização Dinâmica da Configuração -->
+                    <div id="spin-config-card" class="bg-white border border-slate-200 rounded-2xl p-6 transition-all">
+                        <!-- Header do Card Dinâmico -->
+                        <div class="flex items-start justify-between gap-4 mb-5">
+                            <div>
+                                <span id="spin-badge" class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold mb-2">
+                                    3 Fileiras Ativas • Todos Juntos
+                                </span>
+                                <h3 id="spin-titulo" class="font-display font-bold text-xl text-petrol-900">
+                                    Modo Família & Passeios: Até 6 Passageiros
+                                </h3>
+                            </div>
+                            <div id="spin-icone-box" class="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center shrink-0 text-xl shadow">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                        </div>
+
+                        <!-- Mapa Visual de Assentos da Spin -->
+                        <div class="bg-petrol-950 rounded-2xl p-5 mb-5 text-white border border-petrol-800">
+                            <p class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold mb-3 flex items-center justify-between">
+                                <span>Layout Interno Chevrolet Spin</span>
+                                <span id="spin-capacidade-label" class="text-amber-400">6 Passageiros + Motorista</span>
+                            </p>
+                            
+                            <!-- Grid Visual dos 7 Lugares -->
+                            <div class="grid grid-cols-3 gap-3 text-center text-xs">
+                                <!-- Fileira 1 -->
+                                <div class="p-3 rounded-xl bg-white/10 border border-white/15">
+                                    <span class="block text-[10px] text-slate-400 mb-1">1ª Fileira</span>
+                                    <div class="flex justify-center gap-2 font-bold">
+                                        <span class="px-2 py-1 rounded bg-amber-500 text-petrol-950" title="Motorista Marcus">M</span>
+                                        <span class="px-2 py-1 rounded bg-emerald-600 text-white">1</span>
+                                    </div>
+                                </div>
+                                <!-- Fileira 2 -->
+                                <div class="p-3 rounded-xl bg-white/10 border border-white/15">
+                                    <span class="block text-[10px] text-slate-400 mb-1">2ª Fileira</span>
+                                    <div class="flex justify-center gap-1.5 font-bold">
+                                        <span class="px-2 py-1 rounded bg-emerald-600 text-white">2</span>
+                                        <span class="px-2 py-1 rounded bg-emerald-600 text-white">3</span>
+                                        <span class="px-2 py-1 rounded bg-emerald-600 text-white">4</span>
+                                    </div>
+                                </div>
+                                <!-- Fileira 3 / Porta-malas -->
+                                <div id="spin-terceira-fileira" class="p-3 rounded-xl bg-emerald-600/20 border border-emerald-500/40">
+                                    <span class="block text-[10px] text-emerald-300 mb-1">3ª Fileira</span>
+                                    <div class="flex justify-center gap-2 font-bold">
+                                        <span class="px-2 py-1 rounded bg-emerald-600 text-white">5</span>
+                                        <span class="px-2 py-1 rounded bg-emerald-600 text-white">6</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p id="spin-descricao" class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Ideal para famílias maiores ou grupos de amigos viajando juntos sem precisar dividir em dois carros. Todos os 6 passageiros contam com cintos de segurança, encostos de cabeça e ar-condicionado eficiente.
+                        </p>
+
+                        <div id="spin-destaques" class="grid sm:grid-cols-2 gap-2.5 text-xs font-medium text-petrol-900">
+                            <div class="flex items-center gap-2 bg-slate-50 p-2.5 rounded-xl border border-slate-200/70">
+                                <i class="fa-solid fa-check text-emerald-600"></i>
+                                <span>Economia: 1 único veículo para o grupo</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-slate-50 p-2.5 rounded-xl border border-slate-200/70">
+                                <i class="fa-solid fa-check text-emerald-600"></i>
+                                <span>Mochilas e bolsas de passeio</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna Direita: Diferenciais do Motorista Marcus Guarilha -->
+                <div class="lg:col-span-6 space-y-4">
+                    <div class="p-6 rounded-3xl bg-white border border-slate-200 hover:border-emerald-500/40 hover:shadow-lg transition-all flex gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-petrol-900 text-amber-400 flex items-center justify-center shrink-0 text-xl">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-lg text-petrol-900">Pontualidade Britânica</h3>
+                            <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                                Compromisso absoluto com os horários combinados. Nos transfers dos aeroportos <strong>IGU (Brasil)</strong> e <strong>IGR (Argentina)</strong>, acompanhamos seu voo em tempo real para recepcioná-lo sem espera.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-3xl bg-white border border-slate-200 hover:border-emerald-500/40 hover:shadow-lg transition-all flex gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center shrink-0 text-xl">
+                            <i class="fa-solid fa-route"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-lg text-petrol-900">Rotas Inteligentes & Aduanas sem Estresse</h3>
+                            <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                                Amplo conhecimento local dos horários estratégicos para evitar filas na <strong>Ponte da Amizade (Paraguai)</strong> e na <strong>Ponte Tancredo Neves (Argentina)</strong>, além de orientação completa sobre documentação.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-3xl bg-white border border-slate-200 hover:border-emerald-500/40 hover:shadow-lg transition-all flex gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-500 text-petrol-950 flex items-center justify-center shrink-0 text-xl">
+                            <i class="fa-solid fa-sparkles"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-lg text-petrol-900">Veículo Sempre Higienizado e Revisado</h3>
+                            <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                                Manutenção preventiva rigorosa, pneus novos, higienização interna diária e ar-condicionado revisado para garantir bem-estar em qualquer época do ano.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 rounded-3xl bg-white border border-slate-200 hover:border-emerald-500/40 hover:shadow-lg transition-all flex gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-petrol-800 text-emerald-400 flex items-center justify-center shrink-0 text-xl">
+                            <i class="fa-solid fa-handshake-angle"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-lg text-petrol-900">Atendimento Personalizado por Marcus Guarilha</h3>
+                            <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                                Você fala e viaja diretamente com o motorista credenciado responsável. Preço fechado combinado previamente, dicas sinceras de lojas confiáveis no Paraguai e restaurantes em Puerto Iguazú.
+                            </p>
+                            <a href="https://www.instagram.com/marcusrecptivofozdoiguacu1?exln=MWJodTVzczZqaG5zaw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 mt-2.5 text-xs font-bold text-pink-600 hover:text-pink-700 transition-colors">
+                                <i class="fa-brands fa-instagram text-sm"></i>
+                                <span>Acompanhe nossos passeios no Instagram (@marcusrecptivofozdoiguacu1)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 4. CATÁLOGO DE ROTEIROS NA TRÍPLICE FRONTEIRA ==================== -->
+    <section id="roteiros" class="py-20 bg-slate-100 border-y border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+                <div>
+                    <span class="inline-block px-3.5 py-1 rounded-full bg-amber-500/15 text-amber-700 font-bold text-xs uppercase tracking-wider mb-3">
+                        Roteiros na Tríplice Fronteira
+                    </span>
+                    <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-petrol-900">
+                        Passeios Privativos & Transfers Aeroporto
+                    </h2>
+                    <p class="text-slate-600 mt-2 max-w-2xl">
+                        Filtre por destino e clique em <strong>"Cotar este Passeio"</strong> para preencher automaticamente o simulador de orçamento abaixo.
+                    </p>
+                </div>
+
+                <!-- Filtros por Categoria -->
+                <div id="filter-buttons" class="flex flex-wrap gap-2">
+                    <button type="button" data-filter="todos" class="filter-btn active px-4 py-2.5 rounded-xl text-sm font-bold bg-petrol-900 text-white shadow-sm transition-all">
+                        Todos
+                    </button>
+                    <button type="button" data-filter="brasil" class="filter-btn px-4 py-2.5 rounded-xl text-sm font-semibold bg-white text-slate-700 hover:bg-slate-200/70 border border-slate-200 transition-all">
+                        🇧🇷 Brasil (Foz)
+                    </button>
+                    <button type="button" data-filter="paraguai" class="filter-btn px-4 py-2.5 rounded-xl text-sm font-semibold bg-white text-slate-700 hover:bg-slate-200/70 border border-slate-200 transition-all">
+                        🇵🇾 Paraguai (Compras)
+                    </button>
+                    <button type="button" data-filter="argentina" class="filter-btn px-4 py-2.5 rounded-xl text-sm font-semibold bg-white text-slate-700 hover:bg-slate-200/70 border border-slate-200 transition-all">
+                        🇦🇷 Argentina (Puerto Iguazú)
+                    </button>
+                    <button type="button" data-filter="transfer" class="filter-btn px-4 py-2.5 rounded-xl text-sm font-semibold bg-white text-slate-700 hover:bg-slate-200/70 border border-slate-200 transition-all">
+                        ✈️ Transfers Aeroporto
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid de 6 Cards Completos -->
+            <div id="tours-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+                
+                <!-- 1. Cataratas do Iguaçu (Lado Brasileiro) + Parque das Aves -->
+                <article data-category="brasil" class="tour-card bg-white rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <div class="relative h-52 overflow-hidden bg-petrol-900">
+                        <img 
+                            src="https://images.unsplash.com/photo-1583255448430-17c5eda08e5c?auto=format&fit=crop&w=800&q=80" 
+                            alt="Cataratas do Iguaçu Lado Brasileiro e Parque das Aves"
+                            onerror="this.onerror=null;this.src='https://placehold.co/800x500/059669/FFFFFF?text=Cataratas+Brasil+%2B+Parque+das+Aves';"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        >
+                        <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-bold shadow">
+                            🇧🇷 Brasil (Foz)
+                        </div>
+                        <div class="absolute bottom-3 right-3 px-3 py-1 rounded-xl bg-petrol-950/85 backdrop-blur-sm text-white text-xs font-medium">
+                            <i class="fa-regular fa-clock text-amber-400 mr-1"></i> Duração média: 4h a 6h
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="font-display font-bold text-xl text-petrol-900 mb-2">
+                            Cataratas do Iguaçu (Lado Brasileiro) + Parque das Aves
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-1">
+                            Visite uma das 7 Maravilhas Naturais do Mundo e o maior parque de aves da América Latina em um único roteiro otimizado, com embarque e desembarque direto no seu hotel.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-1.5 mb-5 border-t border-slate-100 pt-3">
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Espera combinada sem pressa para fotos</li>
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Possibilidade de incluir Macuco Safari</li>
+                        </ul>
+                        <button type="button" onclick="selecionarServico('Cataratas do Iguaçu (Lado Brasileiro) + Parque das Aves')" class="w-full py-3.5 px-4 rounded-xl bg-petrol-900 hover:bg-emerald-600 text-white font-bold text-sm transition-colors flex items-center justify-center gap-2">
+                            <span>Cotar este Passeio</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- 2. Compras em Ciudad del Este (Paraguai) -->
+                <article data-category="paraguai" class="tour-card bg-white rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <div class="relative h-52 overflow-hidden bg-petrol-900">
+                        <img 
+                            src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=800&q=80" 
+                            alt="Compras em Ciudad del Este Paraguai"
+                            onerror="this.onerror=null;this.src='https://placehold.co/800x500/D97706/FFFFFF?text=Compras+Ciudad+del+Este';"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        >
+                        <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-amber-500 text-petrol-950 text-xs font-bold shadow">
+                            🇵🇾 Paraguai (Compras)
+                        </div>
+                        <div class="absolute bottom-3 right-3 px-3 py-1 rounded-xl bg-petrol-950/85 backdrop-blur-sm text-white text-xs font-medium">
+                            <i class="fa-regular fa-clock text-amber-400 mr-1"></i> Duração média: 4h a 6h
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="font-display font-bold text-xl text-petrol-900 mb-2">
+                            Compras em Ciudad del Este (Paraguai)
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-1">
+                            Ida e volta com espera combinada e dicas de lojas confiáveis (Cellshop, Shopping China, Monalisa, Paris). Guarde suas sacolas no porta-malas amplo da Spin com segurança.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-1.5 mb-5 border-t border-slate-100 pt-3">
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Ponto de encontro estratégico nos shoppings</li>
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Orientação sobre cota da Receita Federal</li>
+                        </ul>
+                        <button type="button" onclick="selecionarServico('Compras em Ciudad del Este (Paraguai) - Ida e volta com espera')" class="w-full py-3.5 px-4 rounded-xl bg-petrol-900 hover:bg-emerald-600 text-white font-bold text-sm transition-colors flex items-center justify-center gap-2">
+                            <span>Cotar este Passeio</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- 3. Cataratas (Lado Argentino) + Feirinha + Marco 3 Fronteiras AR -->
+                <article data-category="argentina" class="tour-card bg-white rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <div class="relative h-52 overflow-hidden bg-petrol-900">
+                        <img 
+                            src="https://images.unsplash.com/photo-1623945202660-0a38804a428d?auto=format&fit=crop&w=800&q=80" 
+                            alt="Cataratas Lado Argentino e Puerto Iguazú"
+                            onerror="this.onerror=null;this.src='https://placehold.co/800x500/0A2540/FFFFFF?text=Cataratas+AR+%2B+Puerto+Iguazu';"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        >
+                        <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-sky-600 text-white text-xs font-bold shadow">
+                            🇦🇷 Argentina (Puerto Iguazú)
+                        </div>
+                        <div class="absolute bottom-3 right-3 px-3 py-1 rounded-xl bg-petrol-950/85 backdrop-blur-sm text-white text-xs font-medium">
+                            <i class="fa-regular fa-clock text-amber-400 mr-1"></i> Duração média: 7h a 9h
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="font-display font-bold text-xl text-petrol-900 mb-2">
+                            Cataratas (Lado Argentino) + Feirinha + Marco 3 Fronteiras AR
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-1">
+                            Passeio completo pela Garganta do Diabo no Parque Nacional Iguazú, seguido de parada na tradicional Feirinha de vinhos e azeitonas, Marco das 3 Fronteiras AR e Duty Free.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-1.5 mb-5 border-t border-slate-100 pt-3">
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Auxílio completo na aduana argentina</li>
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Opção também de roteiro só noturno (Jantar)</li>
+                        </ul>
+                        <button type="button" onclick="selecionarServico('Cataratas (Lado Argentino) + Feirinha de Puerto Iguazú + Marco AR')" class="w-full py-3.5 px-4 rounded-xl bg-petrol-900 hover:bg-emerald-600 text-white font-bold text-sm transition-colors flex items-center justify-center gap-2">
+                            <span>Cotar este Passeio</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- 4. Itaipu Binacional + Templo Budista + Mesquita -->
+                <article data-category="brasil" class="tour-card bg-white rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <div class="relative h-52 overflow-hidden bg-petrol-900">
+                        <img 
+                            src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=800&q=80" 
+                            alt="Itaipu Binacional, Templo Budista e Mesquita"
+                            onerror="this.onerror=null;this.src='https://placehold.co/800x500/047857/FFFFFF?text=Itaipu+%2B+Templo+Budista+%2B+Mesquita';"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        >
+                        <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-bold shadow">
+                            🇧🇷 Brasil (Foz)
+                        </div>
+                        <div class="absolute bottom-3 right-3 px-3 py-1 rounded-xl bg-petrol-950/85 backdrop-blur-sm text-white text-xs font-medium">
+                            <i class="fa-regular fa-clock text-amber-400 mr-1"></i> Duração média: 4h a 5h
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="font-display font-bold text-xl text-petrol-900 mb-2">
+                            Itaipu Binacional + Templo Budista + Mesquita Omar Ibn Al-Khattab
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-1">
+                            Roteiro cultural e histórico pela região norte de Foz: visita à Usina de Itaipu (Panorâmica ou Especial), ao Templo Budista Chen Tien e à Mesquita Islâmica.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-1.5 mb-5 border-t border-slate-100 pt-3">
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Logística integrada entre os 3 atrativos</li>
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Parada para fotos e explicações locais</li>
+                        </ul>
+                        <button type="button" onclick="selecionarServico('Itaipu Binacional (Panorâmica/Especial) + Templo Budista + Mesquita')" class="w-full py-3.5 px-4 rounded-xl bg-petrol-900 hover:bg-emerald-600 text-white font-bold text-sm transition-colors flex items-center justify-center gap-2">
+                            <span>Cotar este Passeio</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- 5. Marco das Três Fronteiras (BR) + Roda Gigante Yup Star + Jantar Show -->
+                <article data-category="brasil" class="tour-card bg-white rounded-3xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <div class="relative h-52 overflow-hidden bg-petrol-900">
+                        <img 
+                            src="https://images.unsplash.com/photo-1513883049090-d0b7439799bf?auto=format&fit=crop&w=800&q=80" 
+                            alt="Marco das Três Fronteiras BR e Roda Gigante Yup Star"
+                            onerror="this.onerror=null;this.src='https://placehold.co/800x500/0A2540/FFFFFF?text=Marco+3+Fronteiras+%2B+Yup+Star';"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        >
+                        <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-bold shadow">
+                            🇧🇷 Brasil (Foz) • Fim de Tarde
+                        </div>
+                        <div class="absolute bottom-3 right-3 px-3 py-1 rounded-xl bg-petrol-950/85 backdrop-blur-sm text-white text-xs font-medium">
+                            <i class="fa-regular fa-clock text-amber-400 mr-1"></i> Duração média: 3h30 a 5h
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="font-display font-bold text-xl text-petrol-900 mb-2">
+                            Marco das Três Fronteiras (BR) + Roda Gigante Yup Star + Jantar Show
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-1">
+                            Aprecie o pôr do sol do alto da Yup Star (88 metros) e viva a magia das apresentações culturais e jantar no Marco das Três Fronteiras ou Rafain Churrascaria Show.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-1.5 mb-5 border-t border-slate-100 pt-3">
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Saída no horário ideal para o pôr do sol</li>
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Retorno confortável ao hotel após o show</li>
+                        </ul>
+                        <button type="button" onclick="selecionarServico('Marco das Três Fronteiras (BR) + Roda Gigante Yup Star + Jantar Show')" class="w-full py-3.5 px-4 rounded-xl bg-petrol-900 hover:bg-emerald-600 text-white font-bold text-sm transition-colors flex items-center justify-center gap-2">
+                            <span>Cotar este Passeio</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- 6. Transfer Aeroporto Internacional de Foz (IGU) ou Puerto Iguazú (IGR) <-> Hotéis / Airbnb -->
+                <article data-category="transfer" class="tour-card bg-white rounded-3xl overflow-hidden border-2 border-emerald-600/30 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <div class="relative h-52 overflow-hidden bg-petrol-900">
+                        <img 
+                            src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80" 
+                            alt="Transfer Aeroporto Internacional IGU e IGR"
+                            onerror="this.onerror=null;this.src='https://placehold.co/800x500/0F3459/FFFFFF?text=Transfer+Aeroporto+IGU+%26+IGR';"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        >
+                        <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-petrol-900 text-amber-400 border border-amber-400/40 text-xs font-bold shadow">
+                            ✈️ Transfers Aeroporto • 24h
+                        </div>
+                        <div class="absolute bottom-3 right-3 px-3 py-1 rounded-xl bg-petrol-950/85 backdrop-blur-sm text-white text-xs font-medium">
+                            <i class="fa-solid fa-plane-arrival text-emerald-400 mr-1"></i> IGU (BR) & IGR (AR)
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="font-display font-bold text-xl text-petrol-900 mb-2">
+                            Transfer Aeroporto Internacional de Foz (IGU) ou Puerto Iguazú (IGR) ↔ Hotéis / Airbnb
+                        </h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-1">
+                            Receptivo privativo na sala de desembarque com monitoramento do seu voo. Espaço garantido para bagagens da família até seu hotel, resort ou Airbnb em Foz ou Puerto Iguazú.
+                        </p>
+                        <ul class="text-xs text-slate-600 space-y-1.5 mb-5 border-t border-slate-100 pt-3">
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Sem espera de aplicativo ou fila de táxi</li>
+                            <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Atendimento 24h mediante agendamento</li>
+                        </ul>
+                        <button type="button" onclick="selecionarServico('Transfer Aeroporto Internacional de Foz (IGU) ou Puerto Iguazú (IGR) ↔ Hotéis / Airbnb')" class="w-full py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-colors flex items-center justify-center gap-2 shadow-md">
+                            <span>Cotar este Passeio</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 5. SIMULADOR DE ORÇAMENTO INTERATIVO & GERADOR WHATSAPP ==================== -->
+    <section id="simulador" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-petrol-900 rounded-[2rem] p-6 sm:p-10 lg:p-12 shadow-2xl border border-white/10 text-white">
+                
+                <div class="grid lg:grid-cols-12 gap-10">
+                    <!-- Coluna Esquerda: Formulário Prático -->
+                    <div class="lg:col-span-7 space-y-5">
+                        <div>
+                            <span class="inline-block px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 font-bold text-xs uppercase tracking-wider mb-2">
+                                Simulador de Orçamento Interativo
+                            </span>
+                            <h2 class="font-display font-extrabold text-2xl sm:text-3xl">
+                                Monte seu Roteiro e Peça Cotação no WhatsApp
+                            </h2>
+                            <p class="text-slate-300 text-sm mt-1.5">
+                                Preencha os dados da sua viagem para gerar a mensagem pronta e falar diretamente com <strong>Marcus Guarilha</strong>.
+                            </p>
+                        </div>
+
+                        <form id="quote-form" class="space-y-4">
+                            <!-- Nome do Cliente -->
+                            <div>
+                                <label for="cliente-nome" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
+                                    Nome do Cliente *
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="cliente-nome" 
+                                    required
+                                    placeholder="Ex: Mariana Costa e Família"
+                                    class="w-full px-4 py-3.5 rounded-xl bg-white/10 border border-white/15 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 text-sm"
+                                >
+                            </div>
+
+                            <!-- Tipo de Serviço / Roteiro -->
+                            <div>
+                                <label for="servico-tipo" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
+                                    Tipo de Serviço / Roteiro *
+                                </label>
+                                <select 
+                                    id="servico-tipo" 
+                                    class="w-full px-4 py-3.5 rounded-xl bg-petrol-950 border border-white/15 text-white focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 text-sm"
+                                >
+                                    <option value="Cataratas do Iguaçu (Lado Brasileiro) + Parque das Aves">🇧🇷 Cataratas do Iguaçu (Lado Brasileiro) + Parque das Aves</option>
+                                    <option value="Compras em Ciudad del Este (Paraguai) - Ida e volta com espera">🇵🇾 Compras em Ciudad del Este (Paraguai) - Ida e volta com espera</option>
+                                    <option value="Cataratas (Lado Argentino) + Feirinha de Puerto Iguazú + Marco AR">🇦🇷 Cataratas (Lado Argentino) + Feirinha de Puerto Iguazú + Marco AR</option>
+                                    <option value="Itaipu Binacional (Panorâmica/Especial) + Templo Budista + Mesquita">⚡ Itaipu Binacional (Panorâmica/Especial) + Templo Budista + Mesquita</option>
+                                    <option value="Marco das Três Fronteiras (BR) + Roda Gigante Yup Star + Jantar Show">🌅 Marco das Três Fronteiras (BR) + Roda Gigante Yup Star + Jantar Show</option>
+                                    <option value="Transfer Aeroporto Internacional de Foz (IGU) ou Puerto Iguazú (IGR) ↔ Hotéis / Airbnb">✈️ Transfer Aeroporto Internacional de Foz (IGU) ou Puerto Iguazú (IGR) ↔ Hotéis / Airbnb</option>
+                                    <option value="Roteiro Personalizado / Diária Privativa Spin 7 Lugares">🗺️ Roteiro Personalizado / Diária Privativa Spin 7 Lugares</option>
+                                </select>
+                            </div>
+
+                            <!-- Data Prevista & Quantidade de Passageiros -->
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="data-prevista" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
+                                        Data Prevista da Viagem
+                                    </label>
+                                    <input 
+                                        type="date" 
+                                        id="data-prevista" 
+                                        class="w-full px-4 py-3.5 rounded-xl bg-white/10 border border-white/15 text-white focus:outline-none focus:border-emerald-400 text-sm"
+                                    >
+                                </div>
+
+                                <div>
+                                    <label for="passageiros" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
+                                        Quantidade de Passageiros (1 a 6)
+                                    </label>
+                                    <select 
+                                        id="passageiros" 
+                                        class="w-full px-4 py-3.5 rounded-xl bg-petrol-950 border border-white/15 text-white focus:outline-none focus:border-emerald-400 text-sm"
+                                    >
+                                        <option value="1 pessoa">1 pessoa</option>
+                                        <option value="2 pessoas">2 pessoas</option>
+                                        <option value="3 pessoas">3 pessoas</option>
+                                        <option value="4 pessoas" selected>4 pessoas</option>
+                                        <option value="5 pessoas">5 pessoas</option>
+                                        <option value="6 pessoas (Lotação máxima Spin)">6 pessoas (Lotação máxima Spin)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Local de Embarque -->
+                            <div>
+                                <label for="local-embarque" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
+                                    Local de Embarque (Hotel, Airbnb, Aeroporto IGU ou IGR)
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="local-embarque" 
+                                    placeholder="Ex: Aeroporto IGU, Hotel Tarobá, Wish Resort, Airbnb Centro..."
+                                    class="w-full px-4 py-3.5 rounded-xl bg-white/10 border border-white/15 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 text-sm"
+                                >
+                            </div>
+
+                            <!-- Observações Opcionais -->
+                            <div>
+                                <label for="observacoes" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">
+                                    Observações Adicionais (Opcional)
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="observacoes" 
+                                    placeholder="Ex: 3 malas grandes, horário do voo 14h20, cadeirinha infantil..."
+                                    class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/15 text-white placeholder-slate-400 focus:outline-none focus:border-emerald-400 text-sm"
+                                >
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Coluna Direita: Pré-visualização em Tempo Real & Ações -->
+                    <div class="lg:col-span-5 flex flex-col justify-between bg-petrol-950/90 border border-white/10 rounded-3xl p-6">
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-bold uppercase tracking-wider text-amber-400 flex items-center gap-2">
+                                    <i class="fa-brands fa-whatsapp text-base"></i> Pré-visualização em Tempo Real
+                                </span>
+                                <span class="text-[11px] text-emerald-400 font-medium">Pronta para enviar</span>
+                            </div>
+
+                            <!-- Caixa da Mensagem Formatada -->
+                            <div class="bg-[#0b141a] border border-emerald-500/25 rounded-2xl p-4 shadow-inner">
+                                <pre id="whatsapp-preview" class="whitespace-pre-wrap font-sans text-xs sm:text-sm text-slate-200 leading-relaxed"></pre>
+                            </div>
+
+                            <!-- Configuração Discreta e Fácil do WhatsApp do Marcus -->
+                            <details class="bg-white/5 border border-white/10 rounded-xl p-3 text-xs">
+                                <summary class="cursor-pointer font-semibold text-slate-300 hover:text-amber-300 flex items-center justify-between list-none">
+                                    <span class="flex items-center gap-1.5">
+                                        <i class="fa-solid fa-circle-check text-emerald-400"></i> WhatsApp Oficial Conectado
+                                    </span>
+                                    <span class="text-[10px] text-slate-400 underline">+55 (45) 98813-1175</span>
+                                </summary>
+                                <div class="mt-3 pt-2.5 border-t border-white/10 space-y-1.5">
+                                    <label for="whatsapp-destino" class="block text-[11px] text-slate-300">
+                                        Número oficial do Marcus Guarilha (DDI + DDD):
+                                    </label>
+                                    <input 
+                                        type="tel" 
+                                        id="whatsapp-destino" 
+                                        value="5545988131175" 
+                                        class="w-full bg-petrol-900 border border-white/20 rounded-lg px-3 py-2 text-xs text-white font-mono focus:outline-none focus:border-emerald-400"
+                                    >
+                                    <p class="text-[10px] text-emerald-300/90 leading-snug">
+                                        Pronto! Todos os pedidos e botões deste site direcionam diretamente para o WhatsApp oficial do Marcus Guarilha.
+                                    </p>
+                                </div>
+                            </details>
+                        </div>
+
+                        <!-- Botões de Envio e Cópia -->
+                        <div class="space-y-3 pt-6">
+                            <button 
+                                type="button" 
+                                onclick="enviarParaWhatsApp()" 
+                                class="w-full py-4 px-6 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-base shadow-lg shadow-emerald-600/30 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2.5"
+                            >
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                <span>Enviar Pedido no WhatsApp</span>
+                            </button>
+
+                            <button 
+                                type="button" 
+                                onclick="copiarMensagem()" 
+                                class="w-full py-3 px-4 rounded-xl bg-white/10 hover:bg-white/15 text-slate-200 font-semibold text-xs transition-colors flex items-center justify-center gap-2"
+                            >
+                                <i class="fa-regular fa-copy"></i>
+                                <span>Copiar Mensagem</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 6. DEPOIMENTOS & PERGUNTAS FREQUENTES (FAQ DE FRONTEIRA) ==================== -->
+    <section id="faq" class="py-20 bg-slate-50 border-t border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Bloco de Depoimentos -->
+            <div class="mb-20">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="inline-block px-3.5 py-1 rounded-full bg-amber-500/15 text-amber-700 font-bold text-xs uppercase tracking-wider mb-3">
+                        Avaliações 5 Estrelas
+                    </span>
+                    <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-petrol-900">
+                        O que dizem quem viajou com Marcus Guarilha
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base mt-2">
+                        Relatos de famílias e grupos que utilizaram a Spin 7 lugares da Mixto_ur em Foz do Iguaçu.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Depoimento 1 -->
+                    <div class="bg-white p-6 rounded-3xl border border-slate-200/90 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-1 text-amber-400 text-sm mb-4">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed italic">
+                                "Fomos em 6 pessoas da mesma família e a Chevrolet Spin 7 lugares do Marcus atendeu perfeitamente! Carro impecável, ar-condicionado excelente e não precisamos pagar dois carros separados. Fizemos Cataratas Brasil, Argentina e compras no Paraguai com ele."
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 font-bold flex items-center justify-center text-sm">
+                                RF
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm text-petrol-900">Ricardo & Família Ferreira</p>
+                                <p class="text-xs text-slate-500">Campinas - SP • Grupo de 6 pessoas</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Depoimento 2 -->
+                    <div class="bg-white p-6 rounded-3xl border border-slate-200/90 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-1 text-amber-400 text-sm mb-4">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed italic">
+                                "Pontualidade nota 10 no desembarque do aeroporto IGU, mesmo com nosso voo atrasando 40 minutos. O Marcus rebateu a última fileira da Spin e coube nossas 4 malas grandes tranquilamente. Super educado e conhece todos os atalhos de Foz."
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-700 font-bold flex items-center justify-center text-sm">
+                                PM
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm text-petrol-900">Patrícia Mendes</p>
+                                <p class="text-xs text-slate-500">Porto Alegre - RS • Transfer & Passeios</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Depoimento 3 -->
+                    <div class="bg-white p-6 rounded-3xl border border-slate-200/90 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-1 text-amber-400 text-sm mb-4">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed italic">
+                                "O diferencial foi a segurança na ida ao Paraguai e à Argentina. Ele nos avisou antes sobre a validade do RG para a aduana argentina, indicou as lojas confiáveis em Ciudad del Este e ficou nos aguardando no horário combinado. Recomendo de olhos fechados!"
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-sky-100 text-sky-700 font-bold flex items-center justify-center text-sm">
+                                JS
+                            </div>
+                            <div>
+                                <p class="font-bold text-sm text-petrol-900">Juliana & Tiago Santos</p>
+                                <p class="text-xs text-slate-500">Florianópolis - SC • Tríplice Fronteira</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bloco FAQ de Fronteira (Acordeão Interativo) -->
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-10">
+                    <span class="inline-block px-3.5 py-1 rounded-full bg-petrol-900/10 text-petrol-900 font-bold text-xs uppercase tracking-wider mb-3">
+                        Dicas de Fronteira & Dúvidas Frequentes
+                    </span>
+                    <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-petrol-900">
+                        Perguntas Frequentes antes de Viajar
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base mt-2">
+                        Informações essenciais para cruzar a aduana com tranquilidade e aproveitar seu transporte privativo.
+                    </p>
+                </div>
+
+                <div class="space-y-3.5" id="faq-accordion">
+                    <!-- Pergunta 1 -->
+                    <div class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                        <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-display font-bold text-base sm:text-lg text-petrol-900 hover:bg-slate-50 transition-colors">
+                            <span class="flex items-center gap-3">
+                                <i class="fa-solid fa-passport text-emerald-600"></i>
+                                <span>Qual documentação é exigida para entrar na Argentina e no Paraguai?</span>
+                            </span>
+                            <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                            <p class="mb-2">
+                                Para circular em <strong>Puerto Iguazú (Argentina)</strong>, a <strong>CNH (Carteira de Motorista) física em mãos</strong> é aceita para trânsito local e idas à cidade. No entanto, para trâmites migratórios completos e acesso ao Parque Nacional (Cataratas Argentinas), recomenda-se obrigatoriamente:
+                            </p>
+                            <ul class="list-disc pl-5 space-y-1 mb-2">
+                                <li><strong>RG original físico em bom estado</strong> com foto atual e <strong>emitido há menos de 10 anos</strong>; OU</li>
+                                <li><strong>Passaporte válido</strong> dentro do prazo de validade.</li>
+                            </ul>
+                            <p class="text-amber-700 font-medium">
+                                <i class="fa-solid fa-triangle-exclamation mr-1"></i> Atenção: Documentos digitais no celular <strong>NÃO são aceitos</strong> na aduana. Menores de 18 anos viajando sem um dos pais precisam de autorização judicial com firma reconhecida em cartório. No <strong>Paraguai (Ciudad del Este)</strong>, recomenda-se portar o RG recente ou Passaporte.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 2 -->
+                    <div class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                        <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-display font-bold text-base sm:text-lg text-petrol-900 hover:bg-slate-50 transition-colors">
+                            <span class="flex items-center gap-3">
+                                <i class="fa-solid fa-bag-shopping text-amber-500"></i>
+                                <span>Como funciona a espera durante as compras em Ciudad del Este (Paraguai)?</span>
+                            </span>
+                            <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                            Combinamos previamente o horário de saída do seu hotel (geralmente bem cedo para aproveitar o movimento mais tranquilo na Ponte da Amizade) e o tempo de permanência. Deixo você na entrada dos principais shoppings (Cellshop, Shopping China, Paris, Monalisa) e combinamos um ponto de encontro estratégico — inclusive para guardar suas sacolas no porta-malas da Spin caso precise continuar comprando com as mãos livres.
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 3 -->
+                    <div class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                        <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-display font-bold text-base sm:text-lg text-petrol-900 hover:bg-slate-50 transition-colors">
+                            <span class="flex items-center gap-3">
+                                <i class="fa-solid fa-baby-carriage text-sky-600"></i>
+                                <span>Vocês disponibilizam cadeirinha infantil ou assento de elevação?</span>
+                            </span>
+                            <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                            Sim! Basta informar no momento da reserva (pelo simulador ou WhatsApp) a idade e o peso aproximado da criança para prepararmos o dispositivo de retenção adequado (bebê conforto, cadeirinha ou assento de elevação) sem custo adicional, garantindo total segurança na viagem.
+                        </div>
+                    </div>
+
+                    <!-- Pergunta 4 -->
+                    <div class="faq-item bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                        <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-display font-bold text-base sm:text-lg text-petrol-900 hover:bg-slate-50 transition-colors">
+                            <span class="flex items-center gap-3">
+                                <i class="fa-solid fa-credit-card text-emerald-600"></i>
+                                <span>Quais são as formas de pagamento e como funciona o agendamento?</span>
+                            </span>
+                            <i class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                            Aceitamos <strong>Pix, dinheiro (Real) e cartões de débito ou crédito</strong>. Os valores são sempre combinados de forma transparente antes do início do serviço, sem surpresas ou taxas ocultas. Para garantir sua data e horário exclusivo na Spin 7 lugares, recomendamos reservar com antecedência pelo WhatsApp.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== 7. FOOTER COMPLETO + BOTÃO FLUTUANTE WHATSAPP ==================== -->
+    <footer class="bg-petrol-950 text-slate-300 pt-16 pb-10 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Aviso Importante sobre Documentação na Tríplice Fronteira -->
+            <div class="bg-amber-500/10 border border-amber-400/30 rounded-3xl p-6 sm:p-7 mb-14 flex flex-col md:flex-row items-start md:items-center gap-5">
+                <div class="w-12 h-12 rounded-2xl bg-amber-500 text-petrol-950 flex items-center justify-center shrink-0 text-xl">
+                    <i class="fa-solid fa-id-card"></i>
+                </div>
+                <div class="space-y-1">
+                    <h3 class="font-display font-bold text-base sm:text-lg text-amber-300">
+                        Aviso Importante: Documentação na Tríplice Fronteira (BR • PY • AR)
+                    </h3>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                        Para circular em <strong>Puerto Iguazú</strong>, a CNH física serve, mas para aduanas e Parque Nacional Argentino leve sempre <strong>RG original físico com menos de 10 anos de emissão</strong> ou <strong>Passaporte válido</strong>. Documento digital não é aceito.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Grid de Informações da Mixto_ur -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+                <!-- Coluna 1: Marca -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-600 flex items-center justify-center text-white">
+                            <i class="fa-solid fa-van-shuttle text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="font-display font-extrabold text-xl text-white">Mixto<span class="text-amber-400">_ur</span></span>
+                            <p class="text-xs text-slate-400">Táxi & Turismo • Foz do Iguaçu</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Serviço privativo de táxi e receptivo turístico operado pelo motorista credenciado <strong>Marcus Guarilha</strong> com veículo Chevrolet Spin 7 lugares.
+                    </p>
+                </div>
+
+                <!-- Coluna 2: Navegação -->
+                <div>
+                    <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Navegação</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#inicio" class="hover:text-emerald-400 transition-colors">Início</a></li>
+                        <li><a href="#veiculo" class="hover:text-emerald-400 transition-colors">Veículo 7 Lugares</a></li>
+                        <li><a href="#roteiros" class="hover:text-emerald-400 transition-colors">Roteiros na Fronteira</a></li>
+                        <li><a href="#simulador" class="hover:text-emerald-400 transition-colors">Simulador de Orçamento</a></li>
+                        <li><a href="#faq" class="hover:text-emerald-400 transition-colors">Dicas de Fronteira (FAQ)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 3: Serviços -->
+                <div>
+                    <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Serviços Principais</h4>
+                    <ul class="space-y-2.5 text-sm text-slate-400">
+                        <li>• Transfers Aeroporto IGU & IGR</li>
+                        <li>• Cataratas Brasil & Argentina</li>
+                        <li>• Compras Ciudad del Este (PY)</li>
+                        <li>• Puerto Iguazú & Feirinha (AR)</li>
+                        <li>• Itaipu, Templo Budista & Yup Star</li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 4: Contato & Atendimento -->
+                <div>
+                    <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Atendimento</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-emerald-400 mt-1"></i>
+                            <span>Foz do Iguaçu - PR, Brasil<br><span class="text-xs text-slate-400">Tríplice Fronteira (BR • PY • AR)</span></span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                            <a href="https://wa.me/5545988131175" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition-colors font-medium">
+                                +55 (45) 98813-1175
+                            </a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-clock text-amber-400"></i>
+                            <span>Atendimento 24h sob agendamento</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-brands fa-instagram text-pink-400"></i>
+                            <a href="https://www.instagram.com/marcusrecptivofozdoiguacu1?exln=MWJodTVzczZqaG5zaw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400 transition-colors break-all">
+                                @marcusrecptivofozdoiguacu1
+                            </a>
+                        </li>
+                        <li class="pt-2">
+                            <button type="button" onclick="abrirWhatsAppDireto()" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs transition-colors">
+                                <i class="fa-brands fa-whatsapp text-base"></i>
+                                <span>Agendar com Marcus Guarilha</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Direitos Autorais -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <p>&copy; <span id="ano-atual"></span> Mixto_ur - Táxi & Turismo em Foz do Iguaçu • Marcus Guarilha. Todos os direitos reservados.</p>
+                <p>Chevrolet Spin 7 Lugares • Conforto e Segurança</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante Discreto do WhatsApp no Canto Inferior Direito -->
+    <button 
+        type="button"
+        onclick="abrirWhatsAppDireto()" 
+        aria-label="Falar com Marcus Guarilha no WhatsApp"
+        class="fixed bottom-5 right-5 z-40 group flex items-center gap-2.5 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-3.5 rounded-full shadow-2xl shadow-emerald-950/60 border border-emerald-400/30 transition-all hover:scale-105"
+    >
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span class="hidden sm:inline font-bold text-sm pr-1">WhatsApp</span>
+    </button>
+
+    <!-- Notificação Toast (Sem alert) -->
+    <div id="toast-box" class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 transition-all duration-300">
+        <div class="bg-petrol-900 text-white border border-emerald-400/40 px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 text-sm font-medium">
+            <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+            <span id="toast-message">Ação concluída!</span>
+        </div>
+    </div>
+
+    <!-- ==================== JAVASCRIPT INTERATIVO ==================== -->
+    <script>
+        // Ano atual dinâmico no footer
+        document.getElementById('ano-atual').textContent = new Date().getFullYear();
+
+        // Controle do Menu Mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Toast Feedback Visual (Substitui alert())
+        function mostrarToast(mensagem) {
+            const toastBox = document.getElementById('toast-box');
+            const toastMessage = document.getElementById('toast-message');
+            toastMessage.textContent = mensagem;
+            
+            toastBox.classList.remove('opacity-0', 'translate-y-2');
+            toastBox.classList.add('opacity-100', 'translate-y-0');
+
+            setTimeout(() => {
+                toastBox.classList.remove('opacity-100', 'translate-y-0');
+                toastBox.classList.add('opacity-0', 'translate-y-2');
+            }, 3500);
+        }
+
+        // Seletor Interativo de Configuração da Chevrolet Spin 7 Lugares
+        function alternarModoSpin(modo) {
+            const btnFamilia = document.getElementById('btn-modo-familia');
+            const btnCompras = document.getElementById('btn-modo-compras');
+            const badge = document.getElementById('spin-badge');
+            const titulo = document.getElementById('spin-titulo');
+            const iconeBox = document.getElementById('spin-icone-box');
+            const capLabel = document.getElementById('spin-capacidade-label');
+            const terceiraFileira = document.getElementById('spin-terceira-fileira');
+            const descricao = document.getElementById('spin-descricao');
+            const destaques = document.getElementById('spin-destaques');
+
+            if (modo === 'familia') {
+                btnFamilia.className = 'py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-bold bg-petrol-900 text-white shadow transition-all flex items-center justify-center gap-2';
+                btnCompras.className = 'py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 hover:text-petrol-900 transition-all flex items-center justify-center gap-2';
+
+                badge.className = 'inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold mb-2';
+                badge.textContent = '3 Fileiras Ativas • Todos Juntos';
+                titulo.textContent = 'Modo Família & Passeios: Até 6 Passageiros';
+                iconeBox.className = 'w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center shrink-0 text-xl shadow';
+                iconeBox.innerHTML = '<i class="fa-solid fa-users"></i>';
+                capLabel.textContent = '6 Passageiros + Motorista';
+
+                terceiraFileira.className = 'p-3 rounded-xl bg-emerald-600/20 border border-emerald-500/40';
+                terceiraFileira.innerHTML = `
+                    <span class="block text-[10px] text-emerald-300 mb-1">3ª Fileira</span>
+                    <div class="flex justify-center gap-2 font-bold">
+                        <span class="px-2 py-1 rounded bg-emerald-600 text-white">5</span>
+                        <span class="px-2 py-1 rounded bg-emerald-600 text-white">6</span>
+                    </div>
+                `;
+
+                descricao.textContent = 'Ideal para famílias maiores ou grupos de amigos viajando juntos sem precisar dividir em dois carros. Todos os 6 passageiros contam com cintos de segurança, encostos de cabeça e ar-condicionado eficiente.';
+                destaques.innerHTML = `
+                    <div class="flex items-center gap-2 bg-slate-50 p-2.5 rounded-xl border border-slate-200/70">
+                        <i class="fa-solid fa-check text-emerald-600"></i>
+                        <span>Economia: 1 único veículo para o grupo</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-slate-50 p-2.5 rounded-xl border border-slate-200/70">
+                        <i class="fa-solid fa-check text-emerald-600"></i>
+                        <span>Mochilas e bolsas de passeio</span>
+                    </div>
+                `;
+            } else {
+                btnCompras.className = 'py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-bold bg-petrol-900 text-white shadow transition-all flex items-center justify-center gap-2';
+                btnFamilia.className = 'py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 hover:text-petrol-900 transition-all flex items-center justify-center gap-2';
+
+                badge.className = 'inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold mb-2';
+                badge.textContent = '3ª Fileira Rebatida • Bagageiro Máximo';
+                titulo.textContent = 'Modo Compras & Aeroporto: 4 Passageiros + Porta-Malas Gigante';
+                iconeBox.className = 'w-12 h-12 rounded-2xl bg-amber-500 text-petrol-950 flex items-center justify-center shrink-0 text-xl shadow';
+                iconeBox.innerHTML = '<i class="fa-solid fa-suitcase-rolling"></i>';
+                capLabel.textContent = '4 Passageiros + Bagagem Ampla';
+
+                terceiraFileira.className = 'p-3 rounded-xl bg-amber-500/20 border border-amber-400/50';
+                terceiraFileira.innerHTML = `
+                    <span class="block text-[10px] text-amber-300 mb-1">Porta-Malas</span>
+                    <div class="flex justify-center items-center gap-1.5 font-bold text-amber-300 py-1">
+                        <i class="fa-solid fa-suitcase"></i>
+                        <span>710+ Litros</span>
+                    </div>
+                `;
+
+                descricao.textContent = 'Ao rebater a terceira fileira de bancos, a Spin transforma-se em um verdadeiro utilitário de carga leve: acomoda confortavelmente até 4 passageiros com malas grandes de viagem ou caixas e sacolas de compras de Ciudad del Este.';
+                destaques.innerHTML = `
+                    <div class="flex items-center gap-2 bg-slate-50 p-2.5 rounded-xl border border-slate-200/70">
+                        <i class="fa-solid fa-check text-amber-600"></i>
+                        <span>Comporta até 4 malas grandes + mochilas</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-slate-50 p-2.5 rounded-xl border border-slate-200/70">
+                        <i class="fa-solid fa-check text-amber-600"></i>
+                        <span>Perfeito para compras no Paraguai & Duty Free</span>
+                    </div>
+                `;
+            }
+        }
+
+        // Filtro Interativo de Roteiros
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const tourCards = document.querySelectorAll('.tour-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-petrol-900', 'text-white', 'font-bold');
+                    b.classList.add('bg-white', 'text-slate-700', 'font-semibold');
+                });
+                btn.classList.remove('bg-white', 'text-slate-700', 'font-semibold');
+                btn.classList.add('bg-petrol-900', 'text-white', 'font-bold');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                tourCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (filterValue === 'todos' || cardCategory === filterValue) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // Preencher Simulador ao clicar em 'Cotar este Passeio'
+        function selecionarServico(nomeServico) {
+            const selectServico = document.getElementById('servico-tipo');
+            
+            let optionExists = false;
+            for (let i = 0; i < selectServico.options.length; i++) {
+                if (selectServico.options[i].value === nomeServico) {
+                    selectServico.selectedIndex = i;
+                    optionExists = true;
+                    break;
+                }
+            }
+            if (!optionExists) {
+                const newOption = new Option(nomeServico, nomeServico, true, true);
+                selectServico.add(newOption);
+            }
+
+            atualizarPreviewMensagem();
+
+            const simulador = document.getElementById('simulador');
+            simulador.scrollIntoView({ behavior: 'smooth' });
+            
+            setTimeout(() => {
+                document.getElementById('cliente-nome').focus();
+            }, 650);
+            
+            mostrarToast('Passeio selecionado! Complete os dados no simulador.');
+        }
+
+        // Gerar Texto Formatado para WhatsApp
+        function gerarTextoMensagem() {
+            const nome = document.getElementById('cliente-nome').value.trim() || 'Visitante';
+            const servico = document.getElementById('servico-tipo').value;
+            const passageiros = document.getElementById('passageiros').value;
+            const dataRaw = document.getElementById('data-prevista').value;
+            const local = document.getElementById('local-embarque').value.trim() || 'A definir';
+            const obs = document.getElementById('observacoes').value.trim();
+
+            let dataFormatada = 'A combinar';
+            if (dataRaw) {
+                const partes = dataRaw.split('-');
+                if (partes.length === 3) {
+                    dataFormatada = `${partes[2]}/${partes[1]}/${partes[0]}`;
+                }
+            }
+
+            let mensagem = `Olá *Marcus Guarilha (Mixto_ur)*! Gostaria de solicitar um orçamento:\n\n`;
+            mensagem += `👤 *Nome:* ${nome}\n`;
+            mensagem += `🚐 *Serviço:* ${servico}\n`;
+            mensagem += `👥 *Passageiros:* ${passageiros} (Spin 7 Lugares)\n`;
+            mensagem += `📅 *Data prevista:* ${dataFormatada}\n`;
+            mensagem += `📍 *Embarque:* ${local}`;
+
+            if (obs) {
+                mensagem += `\n📝 *Obs:* ${obs}`;
+            }
+
+            mensagem += `\n\nAguardo disponibilidade e valores. Obrigado!`;
+            return mensagem;
+        }
+
+        // Atualizar Pré-visualização em Tempo Real
+        function atualizarPreviewMensagem() {
+            const previewEl = document.getElementById('whatsapp-preview');
+            previewEl.textContent = gerarTextoMensagem();
+        }
+
+        const formInputs = ['cliente-nome', 'servico-tipo', 'passageiros', 'data-prevista', 'local-embarque', 'observacoes'];
+        formInputs.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+                el.addEventListener('input', atualizarPreviewMensagem);
+                el.addEventListener('change', atualizarPreviewMensagem);
+            }
+        });
+
+        // Inicializar pré-visualização
+        atualizarPreviewMensagem();
+
+        // Obter número limpo configurado
+        function obterNumeroWhatsApp() {
+            let num = document.getElementById('whatsapp-destino').value.replace(/\D/g, '');
+            if (num.length === 10 || num.length === 11) {
+                num = '55' + num;
+            }
+            return num;
+        }
+
+        // Abrir WhatsApp com o Orçamento Simulado
+        function enviarParaWhatsApp() {
+            const numeroInput = obterNumeroWhatsApp();
+            if (numeroInput.length < 12) {
+                mostrarToast('Verifique o número de WhatsApp configurado (DDI + DDD + Número).');
+                return;
+            }
+
+            const texto = gerarTextoMensagem();
+            const url = `https://wa.me/${numeroInput}?text=${encodeURIComponent(texto)}`;
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }
+
+        // Abrir WhatsApp Direto (Botões do Header, Hero e Flutuante)
+        function abrirWhatsAppDireto() {
+            const numeroInput = obterNumeroWhatsApp();
+            const saudacao = 'Olá Marcus Guarilha (Mixto_ur)! Vi o site e gostaria de informações sobre transporte privativo com a Spin 7 lugares em Foz do Iguaçu.';
+            const url = `https://wa.me/${numeroInput}?text=${encodeURIComponent(saudacao)}`;
+            window.open(url, '_blank', 'noopener,noreferrer');
+        }
+
+        // Copiar Mensagem Formatada
+        function copiarMensagem() {
+            const texto = gerarTextoMensagem();
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = texto;
+            tempTextArea.style.position = 'fixed';
+            tempTextArea.style.left = '-9999px';
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            
+            try {
+                document.execCommand('copy');
+                mostrarToast('Mensagem copiada! Cole diretamente no WhatsApp.');
+            } catch (err) {
+                mostrarToast('Não foi possível copiar automaticamente.');
+            } finally {
+                document.body.removeChild(tempTextArea);
+            }
+        }
+
+        // Acordeão Interativo do FAQ de Fronteira
+        const faqTriggers = document.querySelectorAll('.faq-trigger');
+        faqTriggers.forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const item = trigger.parentElement;
+                const content = item.querySelector('.faq-content');
+                const icon = trigger.querySelector('.fa-chevron-down');
+                const isOpen = !content.classList.contains('hidden');
+
+                // Fecha todos os outros itens para manter limpeza visual
+                document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+                document.querySelectorAll('.faq-trigger .fa-chevron-down').forEach(i => i.classList.remove('rotate-180'));
+
+                if (!isOpen) {
+                    content.classList.remove('hidden');
+                    icon.classList.add('rotate-180');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
